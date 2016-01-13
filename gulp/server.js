@@ -63,7 +63,7 @@ gulp.task('serve:e2e', ['inject'], function () {
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
 });
-gulp.task('gh',['clean','build'],function(){
+gulp.task('gh',['build'],function(){
   exec('git checkout gh-pages', function (err, stdout, stderr) {
       console.log("checkout output:: "+stdout);
       console.log("checkout error:: "+stderr);
