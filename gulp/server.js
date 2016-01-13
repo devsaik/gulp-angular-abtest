@@ -10,6 +10,7 @@ var browserSyncSpa = require('browser-sync-spa');
 var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
+var exec = require('child_process').exec;
 
 function browserSyncInit(baseDir, browser) {
   browser = browser === undefined ? 'default' : browser;
@@ -60,4 +61,10 @@ gulp.task('serve:e2e', ['inject'], function () {
 
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
+});
+gulp.task('gh',['build'],function(){
+  exec('git checkout gh-pages', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+  });
 });
