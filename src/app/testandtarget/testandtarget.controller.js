@@ -3,10 +3,10 @@
 
   angular
     .module('gulpAngularAbtest')
-    .controller('OptimizelyController', OptimizelyController);
+    .controller('TestAndTargetController', TestAndTargetController);
 
   /** @ngInject */
-  function OptimizelyController($timeout, webDevTec, toastr) {
+  function TestAndTargetController($timeout, webDevTec, toastr) {
     var vm = this;
 
     vm.awesomeThings = [];
