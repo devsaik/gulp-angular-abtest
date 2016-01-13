@@ -86,7 +86,7 @@ gulp.task('gh',['build'],function(){
       console.log("checkout styles:: "+stdout);
       console.log("checkout styles error:: "+stderr);
     });
-    exec('rsync -av /dist/styles/index.html /index.html',function(err, stdout, stderr){
+    exec('rsync -av /dist/index.html /index.html',function(err, stdout, stderr){
       console.log("checkout index:: "+stdout);
       console.log("checkout index error:: "+stderr);
     });
