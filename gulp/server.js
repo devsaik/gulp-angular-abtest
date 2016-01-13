@@ -66,29 +66,6 @@ gulp.task('gh',['build'],function(){
   exec('git checkout gh-pages', function (err, stdout, stderr) {
       console.log("checkout output:: "+stdout);
       console.log("checkout error:: "+stderr);
-    exec('rsync -av /dist/assets/ /assets',function(err, stdout, stderr){
-      console.log("checkout assets:: "+stdout);
-      console.log("checkout assets:: "+stderr);
-    });
-    exec('rsync -av /dist/fonts/ /fonts',function(err, stdout, stderr){
-      console.log("checkout fonts:: "+stdout);
-      console.log("checkout fonts error:: "+stderr);
-    });
-    exec('rsync -av /dist/maps/ /maps',function(err, stdout, stderr){
-      console.log("checkout maps:: "+stdout);
-      console.log("checkout maps error:: "+stderr);
-    });
-    exec('rsync -av /dist/scripts/ /scripts',function(err, stdout, stderr){
-      console.log("checkout scripts:: "+stdout);
-      console.log("checkout scripts error:: "+stderr);
-    });
-    exec('rsync -av /dist/styles/ /styles',function(err, stdout, stderr){
-      console.log("checkout styles:: "+stdout);
-      console.log("checkout styles error:: "+stderr);
-    });
-    exec('rsync -av /dist/index.html /index.html',function(err, stdout, stderr){
-      console.log("checkout index:: "+stdout);
-      console.log("checkout index error:: "+stderr);
-    });
+      gulp.src('./dist/**/*').pipe(gulp.dest('./'))
   });
 });
