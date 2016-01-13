@@ -70,7 +70,7 @@ gulp.task('gh',['build'],function(){
       console.log("checkout output:: "+stdout);
       console.log("checkout error:: "+stderr);
     $.del(['scripts/', 'assets/','styles/','fonts/','maps/']);
-   /* gulp.src('./dist/!**!/!*').pipe(gulp.dest('./'))
-      gulp.src('./dist/!**!/!*').pipe(gulp.dest('./'))*/
+    gulp.src('./dist/**/*').pipe(gulp.dest('./'))
+
   });
 });
