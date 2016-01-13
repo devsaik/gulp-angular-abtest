@@ -11,6 +11,7 @@ var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
 var exec = require('child_process').exec;
+var $ = require('gulp-load-plugins')({});
 
 function browserSyncInit(baseDir, browser) {
   browser = browser === undefined ? 'default' : browser;
@@ -62,10 +63,14 @@ gulp.task('serve:e2e', ['inject'], function () {
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
 });
-gulp.task('gh',['build'],function(){
+gulp.task('gh',['clean','build'],function(){
   exec('git checkout gh-pages', function (err, stdout, stderr) {
       console.log("checkout output:: "+stdout);
       console.log("checkout error:: "+stderr);
-      gulp.src('./dist/**/*').pipe(gulp.dest('./'))
+    $.del(['scripts/', 'assets/','styles/','fonts/','maps/'],function(){
+      console.log('deleted');
+    })
+   /* gulp.src('./dist/!**!/!*').pipe(gulp.dest('./'))
+      gulp.src('./dist/!**!/!*').pipe(gulp.dest('./'))*/
   });
 });
