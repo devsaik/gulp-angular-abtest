@@ -64,7 +64,11 @@ gulp.task('serve:e2e-dist', ['build'], function () {
 });
 gulp.task('gh',['build'],function(){
   exec('git checkout gh-pages', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
+      console.log("checkout output:: "+stdout);
+      console.log("checkout error:: "+stderr);
+    exec('rsync -av /dist/ /',function(err, stdout, stderr){
+      console.log("checkout rsync:: "+stdout);
+      console.log("checkout rsync:: "+stderr);
+    });
   });
 });
