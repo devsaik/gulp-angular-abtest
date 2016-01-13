@@ -69,7 +69,7 @@ gulp.task('gh',['clean','build'],function(){
       console.log("checkout error:: "+stderr);
     $.del(['scripts/', 'assets/','styles/','fonts/','maps/'],function(){
       console.log('deleted');
-    })
+    });
    /* gulp.src('./dist/!**!/!*').pipe(gulp.dest('./'))
       gulp.src('./dist/!**!/!*').pipe(gulp.dest('./'))*/
   });
