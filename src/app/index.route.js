@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($stateProvider, $urlRouterProvider,$locationProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -25,8 +25,14 @@
         templateUrl: 'app/optimizely/optimizely.html',
         controller: 'OptimizelyController',
         controllerAs: 'optimizely'
+      })
+      .state('agenda', {
+        url: '/agenda',
+        templateUrl: 'app/agenda/agenda.html',
+        controller: 'AgendaController',
+        controllerAs: 'agenda'
       });
-
+    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
   }
 
