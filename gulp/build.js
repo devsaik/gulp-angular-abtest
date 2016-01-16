@@ -108,3 +108,6 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', ['html', 'fonts','customLibs', 'other']);
+gulp.task('heroku:production', ['build'], function(){
+  console.log('heroku production');
+});
