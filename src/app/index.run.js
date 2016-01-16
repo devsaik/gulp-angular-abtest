@@ -6,23 +6,19 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$rootScope,$window) {
+  function runBlock($log,$rootScope,$window,$timeout) {
 
     $log.debug('runBlock end');
-    try{
-      $window.optimizely = window.optimizely || [];
-      $window.optimizely.push(["activate"]);
-    }
-    catch(ex){
-      $log.error('Optimizely related '+ex);
-    }
 
-    $rootScope.$on('$stateChangeStart',
+    $rootScope.$on('$viewContentLoaded',
       function(event, toState){
         try{
-         if(toState.url.indexOf('optimizely')>=0){
-           window.optimizely.push(["activate", 4574084077]);
-         }
+        $timeout(function(){
+
+          $log.info('activate! :: '+typeof($window.optimizely));
+          $window.optimizely.push(["activate"]);
+        });
+
         }
         catch(ex){
           $log.error(ex);
