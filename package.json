@@ -2,6 +2,7 @@
   "name": "gulpAngularAbtest",
   "version": "0.0.0",
   "dependencies": {
+    "bower": "~1.7.1",
     "browser-sync": "~2.9.11",
     "browser-sync-spa": "~1.0.3",
     "chalk": "~1.1.1",
@@ -45,13 +46,9 @@
     "phantomjs": "~1.9.18",
     "uglify-save-license": "~0.4.1",
     "wiredep": "~2.2.2",
-    "wrench": "~1.5.8",
-    "bower": "~1.7.1"
+    "wrench": "~1.5.8"
   },
-  "scripts": {
-    "postinstall": "bower install",
-    "start": "gulp serve"
-  },
+  "scripts": {},
   "engines": {
     "node": ">=0.10.0"
   }
