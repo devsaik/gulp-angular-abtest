@@ -32,9 +32,5 @@
         "dist/fonts/glyphicons-halflings-regular.woff2"
       ]
     }
-  },
-  "resolutions": {
-    "jquery": "~2.1.4",
-    "angular": "~1.4.2"
   }
 }
