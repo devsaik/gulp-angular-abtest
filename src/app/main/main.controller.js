@@ -21,7 +21,8 @@
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
-
+      debugger;
+      $log.info('Adobe Target:: '+adobe.target);
       adobe.target.getOffer({
         mbox: 'target-global-mbox',
         success: function(offer) {
@@ -29,8 +30,8 @@
             offer: offer
           })
         },
-        error: function() {
-          $log.error('Unexpected Error target');
+        error: function(e) {
+          $log.error('Unexpected Error target'+e);
         }
       })
     }
