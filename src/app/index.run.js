@@ -14,9 +14,9 @@
       function(event, toState){
         try{
         $timeout(function(){
-
           $log.info('activate! :: '+typeof($window.optimizely));
           $window.optimizely.push(["activate"]);
+          adobeTargetOfferService.applyOffer();
         });
 
         }
@@ -30,13 +30,10 @@
 
     //Step 1: apply state resolve for Target calls in $stateChangeStart event
     $rootScope.$on('$stateChangeStart', function(event, next) {
+      $log.info('state change started');
       adobeTargetOfferService.applyTargetToState(next);
     });
 
-    //Step 2: when DOM is update, apply Target offer (flicker control)
-    $rootScope.$on("$viewContentLoaded", function(event, next, current) {
-      adobeTargetOfferService.applyOffer();
-    });
   }
 
 })();

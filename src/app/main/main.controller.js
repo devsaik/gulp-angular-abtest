@@ -21,7 +21,7 @@
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
-      debugger;
+     /* debugger;
       $log.info('Adobe Target:: '+adobe.target);
       adobe.target.getOffer({
         mbox: 'target-global-mbox',
@@ -32,7 +32,7 @@
           $log.error('Unexpected Error status :: '+status);
           $log.error('Unexpected Error error :: '+error);
         }
-      })
+      })*/
     }
 
     function showToastr() {
