@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr,$log) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -21,6 +21,18 @@
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
+
+      adobe.target.getOffer({
+        mbox: 'target-global-mbox',
+        success: function(offer) {
+          adobe.target.applyOffer({
+            offer: offer
+          })
+        },
+        error: function() {
+          $log.error('Unexpected Error target');
+        }
+      })
     }
 
     function showToastr() {
