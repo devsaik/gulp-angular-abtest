@@ -6,7 +6,7 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$rootScope,$window,$timeout) {
+  function runBlock($log,$rootScope,$window,$timeout,adobeTargetOfferService) {
 
     $log.debug('runBlock end');
 
@@ -26,6 +26,17 @@
 
 
       });
+
+
+    //Step 1: apply state resolve for Target calls in $stateChangeStart event
+    $rootScope.$on('$stateChangeStart', function(event, next) {
+      adobeTargetOfferService.applyTargetToState(next);
+    });
+
+    //Step 2: when DOM is update, apply Target offer (flicker control)
+    $rootScope.$on("$viewContentLoaded", function(event, next, current) {
+      adobeTargetOfferService.applyOffer();
+    });
   }
 
 })();
