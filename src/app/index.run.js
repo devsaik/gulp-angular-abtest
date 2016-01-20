@@ -36,10 +36,10 @@
           var defer = $q.defer();
           // adobe.target API call to get an offer
           adobe.target.getOffer({
-            mbox: 'view2',
+            mbox: 'main',
             params: {
-              "param1": "val1",
-              "param2": "val2"
+              "param1": "heroku",
+              "param2": "mainpage"
             },
             success: function(response) {
               service.log('adobe.target.getOffer success')
