@@ -25,13 +25,12 @@
       $log.info('Adobe Target:: '+adobe.target);
       adobe.target.getOffer({
         mbox: 'target-global-mbox',
-        success: function(offer) {
-          adobe.target.applyOffer({
-            offer: offer
-          })
+        success: function(response) {
+          $log.log('response recieved::'+response);
         },
-        error: function(e) {
-          $log.error('Unexpected Error target'+e);
+        error: function(status,error) {
+          $log.error('Unexpected Error status :: '+status);
+          $log.error('Unexpected Error error :: '+error);
         }
       })
     }
