@@ -21,11 +21,11 @@
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
-      adobeTargetOfferService.getOffer().then(function(response){
+     /* adobeTargetOfferService.getOffer().then(function(response){
         $log.info('get offer response:: '+response);
       }, function(reason) {
         $log.error('Failed: ' + reason);
-      });
+      });*/
      /* debugger;
       $log.info('Adobe Target:: '+adobe.target);
       adobe.target.getOffer({
