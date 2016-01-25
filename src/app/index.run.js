@@ -133,7 +133,7 @@
       function(event, toState){
         try{
         $timeout(function(){
-          $log.info('apply offer invokded:: '+adobeTargetOfferService.applyOffer);
+          $log.info('apply offer invoked:: '+adobeTargetOfferService.applyOffer);
           adobeTargetOfferService.applyOffer();
         });
 

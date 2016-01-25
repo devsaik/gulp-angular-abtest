@@ -1,0 +1,1 @@
+{clientCode:"capitaloneservices",serverHost:"capitaloneservices.tt.omtrdc.net",mboxTimeout:15e3,sessionExpirationTimeout:1860,visitorApiTimeout:2e3,tntIdLifetime:2592e3,crossDomain:"disabled",passPageParameters:!0,usePersistentCookies:!0,imsOrgId:"317906C354252E890A4C98BC",globalMboxName:"target-global-mbox"}
